@@ -198,6 +198,30 @@ body{
     position: absolute;
 }
 
+.section-title {text-align: center;}
+
+.grid-list{
+    display: grid;
+    gap: 25px;
+}
+
+.btn-link{
+    color: var(--old-rose);
+    font-weight: var(--fw-500);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition-1);
+}
+
+.btn-link:is(:hover, :focus){
+    color: var(--chinese-violet);
+}
+
+
+
+
+
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -344,3 +368,59 @@ body{
     color: var(--old-rose);
 }
 
+@keyframes pulse{
+    0%, 
+    50% {box-shadow: 0 0 0 0 hsla(0, 0%, 100%, 0.5);}
+
+    100%{box-shadow: 0 0 0 10px transparent;}
+}
+
+/*-----------------------------------*\
+  #BENEFICS
+\*-----------------------------------*/
+
+.benefits .section-text{
+    text-align: center;
+    margin-block: 8px 25px;
+}
+
+.benefits-card{
+    padding: 25px;
+    box-shadow: var(--shadow-2);
+    border-radius: var(--radius-5);
+    overflow: hidden;
+    transition: var(--transition-2);
+}
+
+.benefits-card::before,
+.benefits-card::after{
+    bottom: 0;
+    right: 0;
+    clip-path: var(--polygon);
+    transition: var(--transition-1);
+}
+
+.benefits-card::before{
+    width: 80px;
+    height: 80px;
+    background: var(--old-rose_30);
+    transform: translateY(60px);
+}
+
+.benefits-card::after{
+    width: 70px;
+    height: 70px;
+    background-color: var(--chinese-violet_30);
+    transform: translateY(65px);
+    
+}
+
+.benefits-cards:is(:hover, :focus-within) {transform: translateY(-10px)}
+
+.benefits-card:is(:hover, :focus-within)::before,
+.benefits-card:is(:hover, :focus-within)::after {transform: translateY(0);}
+
+
+.benefits-card:is(:hover, :focus-within)::after{
+    transition-delay: 0.1s;
+}
