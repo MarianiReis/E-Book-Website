@@ -474,3 +474,52 @@ body{
     transition: var(--transition-2);
 }
 
+.chapter-card:is(:hover, :focus-within){transform: translateY(-10px);}
+
+.chapter-card .card-title {margin-block-end: 15px;}
+
+/*-----------------------------------*\
+  #PREVIEW
+\*-----------------------------------*/
+
+.tab-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tab-card {
+    position: relative;
+    max-height: 60px;
+    background-color: var(--seashell);
+    border-radius: var(--radius-10);
+    box-shadow: var(--shadow-3);
+    display: grid;
+    place-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition-1);
+}
+
+.tab-card .w-100{
+    pointer-events: none;
+    opacity: 0;
+    transition: var(--transition-2);
+}
+
+.tab-card.active .w-100 {opacity: 1;}
+
+.tab-card.active {
+    max-height: 380px;
+    box-shadow: none;
+}
+
+.tab-text {
+    font-size: var(--fs-4);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tab-card.active .tab-text {display: none;}

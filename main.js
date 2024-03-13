@@ -50,3 +50,18 @@ const activeHeader = function(){
 
 addEventOneElem(window, "scroll", activeHeader);
 
+/** 
+ * Filter tab
+ * */
+
+const tabCard = document.querySelectorAll("[data-tab-card]")
+
+let lastTabCard = tabCard[0];
+
+const navigateTab = function() {
+    lastTabCard.classList.remove("active");
+    this.classList.add("active");
+    lastTabCard = this;
+}
+
+addEventOneElem(tabCard, "click", navigateTab)
